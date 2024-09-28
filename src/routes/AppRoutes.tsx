@@ -3,6 +3,7 @@ import { ProtectedRoute } from "./AuthRoutes";
 import MainLayout from "../components/Layout/MainLayout/MainLayout";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Books from "../pages/Books/Books";
+import ContentPage from "../pages/Dashboard/ContentPage/ContentPage";
 
 export default function AppRoutes() {
 	const isAuthenticated = true;
@@ -16,9 +17,13 @@ export default function AppRoutes() {
 					</ProtectedRoute>
 				}>
 				<Route
-					index
 					path="/"
 					element={<Dashboard />}
+				/>
+				<Route
+					index
+					path="/books/:id"
+					element={<ContentPage />}
 				/>
 				<Route
 					index

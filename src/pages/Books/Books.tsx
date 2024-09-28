@@ -32,12 +32,34 @@ export default function Books() {
 					</button>
 				</div>
 
-				<div className="grid grid-cols-6 gap-5">
+				<div className="ml-auto">
+					<ReactPaginate
+						previousLabel={<PreviousButton />}
+						nextLabel={<NextButton />}
+						breakLabel={"..."}
+						pageCount={Math.ceil(booksData.length / booksPerPage)}
+						// pageCount={10}
+						marginPagesDisplayed={2}
+						pageRangeDisplayed={3}
+						onPageChange={handlePageClick}
+						containerClassName={"pagination flex justify-center mt-4 gap-3"}
+						pageClassName={
+							"border w-10 h-10 flex items-center justify-center rounded-4"
+						}
+						previousClassName={"border p-2 flex items-center justify-center"}
+						nextClassName={"border p-2 flex items-center justify-center"}
+						activeClassName={
+							"bg-transparent text-orange-1 border border-orange-1"
+						}
+					/>
+				</div>
+
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
 					{currentBooks.map((book, index) => (
 						<div
-							className="flex flex-col"
+							className="flex flex-col w-full"
 							key={index}>
-							<div className="h-[270px] rounded-xl">
+							<div className="h-[270px] rounded-xl w-full">
 								<img
 									className="w-full h-full object-cover object-center rounded-xl"
 									src={book?.cover_img}
@@ -45,7 +67,7 @@ export default function Books() {
 								/>
 							</div>
 
-							<div className="mt-3 flex flex-col gap-1">
+							<div className="mt-3 flex flex-col gap-1 w-full">
 								<p className="font-semibold">{book.title}</p>
 								<div className="text-gray-1/60 flex items-center gap-1">
 									<Icon
@@ -68,28 +90,6 @@ export default function Books() {
 							</div>
 						</div>
 					))}
-				</div>
-
-				<div className="ml-auto">
-					<ReactPaginate
-						previousLabel={<PreviousButton />}
-						nextLabel={<NextButton />}
-						breakLabel={"..."}
-						pageCount={Math.ceil(booksData.length / booksPerPage)}
-						// pageCount={10}
-						marginPagesDisplayed={2}
-						pageRangeDisplayed={3}
-						onPageChange={handlePageClick}
-						containerClassName={"pagination flex justify-center mt-4 gap-3"}
-						pageClassName={
-							"border w-10 h-10 flex items-center justify-center rounded-4"
-						}
-						previousClassName={"border p-2 flex items-center justify-center"}
-						nextClassName={"border p-2 flex items-center justify-center"}
-						activeClassName={
-							"bg-transparent text-orange-1 border border-orange-1"
-						}
-					/>
 				</div>
 			</div>
 		</PageWrap>

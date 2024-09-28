@@ -160,7 +160,7 @@ export default function Dashboard() {
 						<button
 							onClick={() => toggleFilter(item.id)}
 							key={index}
-							className={`flex flex-row gap-2 items-center px-5 py-2 rounded-full transition-all duration-500  ${
+							className={`flex hover:text-orange-1  flex-row gap-2 items-center px-5 py-2 rounded-full transition-all duration-500  ${
 								activeFilters.includes(item.id)
 									? "text-orange-1 bg-orange-1/10"
 									: "text-gray-1"
