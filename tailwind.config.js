@@ -9,6 +9,10 @@ export default {
 					2: "#FEFEFF",
 				},
 
+				black: {
+					1: "#323233",
+				},
+
 				orange: {
 					1: "#F14119",
 				},
