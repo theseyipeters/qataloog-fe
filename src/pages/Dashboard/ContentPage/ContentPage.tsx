@@ -64,7 +64,7 @@ export default function ContentPage() {
 					</div>
 				</div>
 
-				<div className="w-full flex md:flex-col xl:flex-row items-start gap-10">
+				<div className="w-full flex flex-col  md:flex-col xl:flex-row items-start gap-10">
 					<div className="w-full xl:w-1/4 flex flex-col gap-3">
 						<h3 className="font-semibold text-xl">Information</h3>
 						<div className="w-full grid grid-cols-4 xl:grid-cols-1 gap-4">
@@ -149,7 +149,7 @@ export default function ContentPage() {
 							/>
 						</div>
 
-						<div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 mt-4">
+						<div className="w-full grid grid-cols-3 md:grid-cols-3 xl:grid-cols-4 gap-5 mt-4">
 							{currentItems.map((book, index) => (
 								<div
 									className="flex flex-col"
