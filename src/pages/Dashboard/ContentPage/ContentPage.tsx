@@ -27,7 +27,7 @@ export default function ContentPage() {
 	return (
 		<PageWrap>
 			<div className="pt-[20px] flex flex-col gap-6 overflow-auto">
-				<div className="flex items-start gap-10">
+				<div className="flex flex-col md:flex-row items-start gap-10">
 					<div className="border border-orange-1 p-10 rounded-xl bg-orange-1/10">
 						<img
 							src={book.cover_img}
@@ -40,7 +40,9 @@ export default function ContentPage() {
 						<p className="font-semibold text-orange-1 text-lg">Paper</p>
 						<div className="w-full flex flex-col mt-4">
 							<div className="w-full flex items-center justify-between">
-								<h1 className="text-4xl font-semibold">{book.title}</h1>
+								<h1 className="text-3xl lg:text-4xl font-semibold">
+									{book.title}
+								</h1>
 								<OptionsIcon />
 							</div>
 
@@ -67,7 +69,7 @@ export default function ContentPage() {
 				<div className="w-full flex flex-col  md:flex-col xl:flex-row items-start gap-10">
 					<div className="w-full xl:w-1/4 flex flex-col gap-3">
 						<h3 className="font-semibold text-xl">Information</h3>
-						<div className="w-full grid grid-cols-4 xl:grid-cols-1 gap-4">
+						<div className="w-full grid grid-cols-2 md:grid-cols-4 xl:grid-cols-1 gap-y-4">
 							<div className="flex gap-3">
 								<Icon
 									icon={"tabler:user"}
@@ -125,7 +127,7 @@ export default function ContentPage() {
 						</div>
 					</div>
 					<div className="w-full ">
-						<div className="w-full flex items-center justify-between">
+						<div className="w-full flex flex-col lg:flex-row items-start md:items-center justify-between gap-3">
 							<h3 className="font-semibold text-xl">Related content</h3>
 							<ReactPaginate
 								previousLabel={<PreviousButton />}
@@ -149,7 +151,7 @@ export default function ContentPage() {
 							/>
 						</div>
 
-						<div className="w-full grid grid-cols-3 md:grid-cols-3 xl:grid-cols-4 gap-5 mt-4">
+						<div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 mt-4">
 							{currentItems.map((book, index) => (
 								<div
 									className="flex flex-col"

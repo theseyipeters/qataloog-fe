@@ -65,11 +65,13 @@ export default function Dashboard() {
 
 	return (
 		<PageWrap>
-			<div className="pt-[20px] flex flex-col gap-6 overflow-auto">
-				<div className="flex items-center justify-between">
-					<h1 className="text-4xl font-bold text-gray-2">Welcome Back</h1>
+			<div className="w-full pt-[20px] flex flex-col gap-6 overflow-auto">
+				<div className="w-full flex items-center justify-between">
+					<h1 className="text-3xl lg:text-4xl font-bold text-gray-2">
+						Welcome Back
+					</h1>
 					<div className="flex flex-row items-center gap-4">
-						<div className="w-[300px]">
+						<div className="w-[300px] hidden lg:block">
 							<SearchInput />
 						</div>
 						<svg
@@ -125,11 +127,11 @@ export default function Dashboard() {
 					</div>
 				</div>
 
-				<div className="w-full gap-10 justify-between items-center flex flex-row">
+				<div className="w-full gap-x-5 justify-between items-center flex flex-col xl:flex-row gap-y-4">
 					{details.map((detail, index) => (
 						<div
 							key={index}
-							className="bg-white-2 px-6 py-6 w-1/3 flex flex-row items-start justify-between rounded-2xl h-[160px]">
+							className="bg-white-2 px-6 py-6 w-full border flex flex-row items-start justify-between rounded-2xl h-[160px]">
 							<div className="flex flex-col gap-2">
 								<h3>{detail.name}</h3>
 
@@ -155,12 +157,12 @@ export default function Dashboard() {
 
 				{/* -----------filters ----------------- */}
 
-				<div className="w-full flex flex-row items-center justify-between gap-4">
+				<div className="w-full grid grid-cols-2 sm:grid-cols-3 xl:flex xl:flex-wrap xl:flex-row xl:items-center xl:gap-x-4 gap-y-2">
 					{filters.map((item, index) => (
 						<button
 							onClick={() => toggleFilter(item.id)}
 							key={index}
-							className={`flex hover:text-orange-1  flex-row gap-2 items-center px-5 py-2 rounded-full transition-all duration-500  ${
+							className={`w-fit flex hover:text-orange-1  flex-row gap-2 items-center px-3 lg:px-5 py-2 rounded-full transition-all duration-500  ${
 								activeFilters.includes(item.id)
 									? "text-orange-1 bg-orange-1/10"
 									: "text-gray-1"
@@ -168,14 +170,16 @@ export default function Dashboard() {
 							<span>
 								<Icon icon={item.icon} />
 							</span>
-							<span className="capitalize">{item.name}</span>
+							<span className="flex flex-shrink-0 capitalize text-sm md:text-base">
+								{item.name}
+							</span>
 						</button>
 					))}
 				</div>
 
 				{/* ------------------render books --------------------- */}
 
-				<div className="flex flex-col gap-5">
+				<div className="w-full flex flex-col gap-5">
 					<div>
 						<button className="flex gap-2 items-center text-orange-1 ml-auto">
 							<span>See all ({booksData.length})</span>
@@ -186,12 +190,12 @@ export default function Dashboard() {
 						</button>
 					</div>
 
-					<div className="grid grid-cols-6 gap-5">
+					<div className="w-full grid xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
 						{currentBooks.map((book, index) => (
 							<div
-								className="flex flex-col"
+								className="flex flex-col w-full"
 								key={index}>
-								<div className="h-[270px] rounded-xl">
+								<div className="h-[270px] rounded-xl w-full">
 									<img
 										className="w-full h-full object-cover object-center rounded-xl"
 										src={book?.cover_img}

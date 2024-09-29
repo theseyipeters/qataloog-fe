@@ -21,6 +21,9 @@ export default {
 					2: "#323233",
 				},
 			},
+			screens: {
+				xs: "480px", // or any width you want for the xs breakpoint
+			},
 		},
 	},
 	plugins: [],

@@ -22,7 +22,9 @@ export default function Books() {
 		<PageWrap>
 			<div className="pt-[20px] flex flex-col gap-5">
 				<div className="flex items-center">
-					<h1 className="text-4xl font-bold text-gray-2">All Books</h1>
+					<h1 className="text-3xl lg:text-4xl font-bold text-gray-2">
+						All Books
+					</h1>
 					<button className="flex gap-2 items-center text-orange-1 ml-auto">
 						<span>See all ({booksData.length})</span>
 						<Icon
@@ -54,7 +56,7 @@ export default function Books() {
 					/>
 				</div>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
+				<div className="w-full grid xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
 					{currentBooks.map((book, index) => (
 						<div
 							className="flex flex-col w-full"

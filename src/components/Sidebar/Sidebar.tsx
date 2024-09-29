@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function Sidebar() {
 	return (
-		<nav className="w-full h-full bg-white py-4 flex flex-col">
+		<nav className="w-[300px] h-full bg-white py-4 flex flex-col">
 			{links.map((link, index) => (
 				<NavLink
 					end

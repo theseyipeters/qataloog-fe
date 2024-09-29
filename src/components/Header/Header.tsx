@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export default function Header({ toggleMobileSidebar }: HeaderProps) {
 	return (
-		<div className="bg-white-2 h-full px-4 lg:px-8 xl:px-12 py-6 flex flex-row items-center gap-10">
+		<div className="bg-white-2 h-full px-4 lg:px-8 xl:px-12 py-6 flex flex-row items-center justify-between lg:justify-normal w-full gap-10">
 			{/* Hamburger Icon for Mobile */}
 			<button
 				className="md:hidden"
@@ -21,7 +21,7 @@ export default function Header({ toggleMobileSidebar }: HeaderProps) {
 			</button>
 
 			{/* Logo */}
-			<div className="">
+			<div className="w-[150px] md:w-[200px]">
 				<QataloogLogo />
 			</div>
 
@@ -30,9 +30,13 @@ export default function Header({ toggleMobileSidebar }: HeaderProps) {
 				<SearchInput />
 			</div>
 
+			<div className="w-fit flex lg:hidden">
+				<BellIcon />
+			</div>
+
 			{/* Notification and User Info */}
-			<div className="flex items-center gap-3 justify-between w-fit lg:min-w-[450px] ml-auto">
-				<div className="w-fit flex">
+			<div className="lg:flex hidden items-center gap-3 justify-between w-fit lg:min-w-[450px] ml-auto">
+				<div className="w-fit ">
 					<BellIcon />
 				</div>
 				<div className="hidden lg:block">
