@@ -4,6 +4,7 @@ import logo from "../assets/qataloog.svg";
 export const QataloogLogo = () => {
 	return (
 		<img
+			className="w-full h-full"
 			src={logo}
 			alt="logo"
 		/>
