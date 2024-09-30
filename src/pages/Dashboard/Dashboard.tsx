@@ -5,6 +5,7 @@ import { useState } from "react";
 import booksData from "../../assets/mock_data/books.json";
 import ReactPaginate from "react-paginate";
 import { NextButton, PreviousButton } from "../../svgs/svgs";
+import Book from "../Books/Book";
 
 const filters = [
 	{ id: "interests", name: "my interests", icon: "tabler:command" },
@@ -191,40 +192,11 @@ export default function Dashboard() {
 					</div>
 
 					<div className="w-full grid xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-						{currentBooks.map((book, index) => (
-							<div
-								className="flex flex-col w-full"
-								key={index}>
-								<div className="h-[270px] rounded-xl w-full">
-									<img
-										className="w-full h-full object-cover object-center rounded-xl"
-										src={book?.cover_img}
-										alt={book?.isbn}
-									/>
-								</div>
-
-								<div className="mt-3 flex flex-col gap-1">
-									<p className="font-semibold">{book.title}</p>
-									<div className="text-gray-1/60 flex items-center gap-1">
-										<Icon
-											icon={"tabler:user"}
-											fontSize={16}
-										/>
-										<p className="text-base">{book.author}</p>
-									</div>
-
-									<div className="mt-2 flex flex-row gap-2 items-center justify-between w-full">
-										<div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-
-										<p className="text-sm text-gray-1">{book.date_released}</p>
-
-										<div className="text-[#493452] flex items-center gap-0">
-											<Icon icon={"tabler:file"} />
-											<p className="text-xs uppercase">{book.file_type}</p>
-										</div>
-									</div>
-								</div>
-							</div>
+						{currentBooks.map((book) => (
+							<Book
+								key={book._id}
+								book={book}
+							/>
 						))}
 					</div>
 
@@ -234,16 +206,21 @@ export default function Dashboard() {
 							nextLabel={<NextButton />}
 							breakLabel={"..."}
 							pageCount={Math.ceil(booksData.length / booksPerPage)}
-							// pageCount={10}
 							marginPagesDisplayed={2}
 							pageRangeDisplayed={3}
 							onPageChange={handlePageClick}
 							containerClassName={"pagination flex justify-center mt-4 gap-3"}
 							pageClassName={
-								"border w-10 h-10 flex items-center justify-center rounded-4"
+								"border w-10 h-10 flex text-gray-1 items-center justify-center rounded-md"
 							}
-							previousClassName={"border p-2 flex items-center justify-center"}
-							nextClassName={"border p-2 flex items-center justify-center"}
+							previousClassName={`border text-white-1 bg-gray-1 p-3 flex items-center rounded-md justify-center ${
+								currentPage === 0 ? "opacity-50 cursor-not-allowed" : ""
+							}`}
+							nextClassName={`border text-white-1 bg-gray-1 p-3 flex items-center rounded-md justify-center ${
+								currentPage === Math.ceil(booksData.length / booksPerPage) - 1
+									? "opacity-50 cursor-not-allowed"
+									: ""
+							}`}
 							activeClassName={
 								"bg-transparent text-orange-1 border border-orange-1"
 							}

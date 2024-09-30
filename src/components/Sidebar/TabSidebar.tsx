@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { links } from "./Links";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Logout } from "../../svgs/sidebarSvgs";
 
 export default function TabSidebar() {
 	return (
@@ -15,11 +15,7 @@ export default function TabSidebar() {
 							: "flex items-center gap-2 py-4 text-gray-700 hover:text-gray-900 rounded-md"
 					}>
 					<div className="flex flex-row gap-2 ml-4 items-center">
-						<Icon
-							icon={link.icon}
-							fontSize={30}
-							strokeWidth={1}
-						/>
+						{link?.icon && <link.icon />}
 						<span>{link.name}</span>
 					</div>
 				</NavLink>
@@ -27,10 +23,7 @@ export default function TabSidebar() {
 
 			<div className="px-8 py-3 w-full mt-auto text-orange-1">
 				<button className="w-full flex items-center justify-center gap-2 border border-orange-1 py-4 rounded-full px-4">
-					<Icon
-						icon={"tabler:logout-2"}
-						fontSize={20}
-					/>
+					<Logout />
 					<p>Logout</p>
 				</button>
 			</div>

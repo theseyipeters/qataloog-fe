@@ -112,6 +112,46 @@ export const NG = () => {
 	);
 };
 
+export const SNG = () => {
+	return (
+		<svg
+			width="21"
+			height="20"
+			viewBox="0 0 21 20"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<g clip-path="url(#clip0_242_1313)">
+				<path
+					d="M14.8479 0.992266C13.5332 0.356563 12.0583 0 10.5001 0C8.94189 0 7.46697 0.356563 6.15228 0.992266L5.28271 10L6.15228 19.0077C7.46697 19.6434 8.94189 20 10.5001 20C12.0583 20 13.5332 19.6434 14.8479 19.0077L15.7175 10L14.8479 0.992266Z"
+					fill="#FFDA44"
+				/>
+				<path
+					d="M10.5002 6.52173L11.3635 9.17876H14.1576L11.8972 10.8211L12.7606 13.4782L10.5002 11.836L8.23985 13.4782L9.10333 10.8211L6.84302 9.17876H9.63689L10.5002 6.52173Z"
+					fill="#496E2D"
+				/>
+				<path
+					d="M6.15243 0.992432C2.80751 2.60989 0.500244 6.03524 0.500244 9.99981C0.500244 13.9644 2.80751 17.3897 6.15243 19.0072V0.992432Z"
+					fill="#496E2D"
+				/>
+				<path
+					d="M14.8481 0.99292V19.0077C18.1931 17.3902 20.5003 13.9649 20.5003 10.0003C20.5003 6.03573 18.1931 2.61038 14.8481 0.99292Z"
+					fill="#D80027"
+				/>
+			</g>
+			<defs>
+				<clipPath id="clip0_242_1313">
+					<rect
+						width="20"
+						height="20"
+						fill="white"
+						transform="translate(0.5)"
+					/>
+				</clipPath>
+			</defs>
+		</svg>
+	);
+};
+
 export const DownCaret = () => {
 	return (
 		<svg
@@ -228,6 +268,218 @@ export const ShareIcon = () => {
 			<path
 				d="M19.638 22.333L28.3047 18.3337M19.638 25.6671L28.3047 29.6664"
 				stroke="#323233"
+				stroke-width="1.5"
+			/>
+		</svg>
+	);
+};
+
+export const RemoveIcon = () => {
+	return (
+		<svg
+			width="25"
+			height="24"
+			viewBox="0 0 25 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M16.5 12L8.5 12"
+				stroke="#F14119"
+				stroke-width="1.5"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+			<path
+				d="M2.5 12C2.5 17.5228 6.97715 22 12.5 22C18.0228 22 22.5 17.5228 22.5 12C22.5 6.47715 18.0228 2 12.5 2"
+				stroke="#F14119"
+				stroke-width="1.5"
+				stroke-linecap="round"
+			/>
+			<path
+				d="M5.14856 5.07876C5.28691 4.93211 5.42948 4.7895 5.5761 4.65111M8.44733 2.72939C8.62884 2.6478 8.81313 2.57128 9 2.5M3.23172 7.94192C3.14925 8.12518 3.07195 8.31127 3 8.5"
+				stroke="#F14119"
+				stroke-width="1.5"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const ChevronDown = () => {
+	return (
+		<svg
+			width="21"
+			height="20"
+			viewBox="0 0 21 20"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M5.5 7.5L10.5 12.5L15.5 7.5"
+				stroke="#323233"
+				stroke-width="1.66667"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const EditIcon = () => {
+	return (
+		<svg
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M16.9459 3.17305C17.5332 2.58578 17.8268 2.29215 18.1521 2.15173C18.6208 1.94942 19.1521 1.94942 19.6208 2.15173C19.946 2.29215 20.2397 2.58578 20.8269 3.17305C21.4142 3.76032 21.7079 4.05395 21.8483 4.37925C22.0506 4.8479 22.0506 5.37924 21.8483 5.84789C21.7079 6.17319 21.4142 6.46682 20.8269 7.05409L15.8054 12.0757C14.5682 13.3129 13.9496 13.9315 13.1748 14.298C12.4 14.6645 11.5294 14.7504 9.78823 14.9222L9 15L9.07778 14.2118C9.24958 12.4706 9.33549 11.6 9.70201 10.8252C10.0685 10.0504 10.6871 9.43183 11.9243 8.19464L16.9459 3.17305Z"
+				stroke="#323233"
+				strokeWidth="1.5"
+				strokeLinejoin="round"
+			/>
+			<path
+				d="M6 15H3.75C2.7835 15 2 15.7835 2 16.75C2 17.7165 2.7835 18.5 3.75 18.5H13.25C14.2165 18.5 15 19.2835 15 20.25C15 21.2165 14.2165 22 13.25 22H11"
+				stroke="#323233"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const CheckIcon = () => {
+	return (
+		<svg
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+				stroke="#33A854"
+				stroke-width="1.5"
+			/>
+			<path
+				d="M8 12.5L10.5 15L16 9"
+				stroke="#33A854"
+				stroke-width="1.5"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const DeleteIcon = () => {
+	return (
+		<svg
+			width="40"
+			height="40"
+			viewBox="0 0 40 40"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<rect
+				width="40"
+				height="40"
+				rx="20"
+				fill="#FF0000"
+				fillOpacity="0.1"
+			/>
+			<path
+				d="M27.5 13.5L27.0982 20.0062M12.5 13.5L13.1046 23.5248C13.2595 26.0922 13.3369 27.3759 13.9787 28.299C14.296 28.7554 14.7048 29.1407 15.1791 29.4302C15.8503 29.84 16.6811 29.9631 18 30"
+				stroke="#FF0000"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+			/>
+			<path
+				d="M28 23L21 29.9995M28 30L21 23.0005"
+				stroke="#FF0000"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+			<path
+				d="M11 13.5H29M24.0557 13.5L23.3731 12.0917C22.9196 11.1563 22.6928 10.6885 22.3017 10.3968C22.215 10.3321 22.1231 10.2745 22.027 10.2247C21.5939 10 21.0741 10 20.0342 10C19.0071 10 17.888 10 16.7938 10C15.5295 10 14.7887 10.1525 14.1154 10.4877C13.4421 10.823 13 11.1413 12.701 11.5948C12.073 12.516 12.0573 13.3913 12.0531 13.7918"
+				stroke="#FF0000"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+			/>
+		</svg>
+	);
+};
+
+export const CloseIcon = () => {
+	return (
+		<svg
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M14.9994 15L9 9M9.00064 15L15 9"
+				stroke="#FF0000"
+				stroke-width="1.5"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+			<path
+				d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+				stroke="#FF0000"
+				stroke-width="1.5"
+			/>
+		</svg>
+	);
+};
+
+export const PlusIcon = () => {
+	return (
+		<svg
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M12 8V16M16 12L8 12"
+				stroke="currentColor"
+				stroke-width="1.5"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+			<path
+				d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+				stroke="currentColor"
+				stroke-width="1.5"
+			/>
+		</svg>
+	);
+};
+
+export const MinusIcon = () => {
+	return (
+		<svg
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M16 12H8"
+				stroke="currentColor"
+				stroke-width="1.5"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+			<circle
+				cx="12"
+				cy="12"
+				r="10"
+				stroke="currentColor"
 				stroke-width="1.5"
 			/>
 		</svg>
