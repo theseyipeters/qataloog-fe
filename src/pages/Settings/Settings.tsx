@@ -21,10 +21,10 @@ export default function Settings() {
 					</h1>
 				</div>
 
-				<div className="w-2/5 ">
+				<div className="w-full grid grid-cols-2 md:flex gap-y-2">
 					{tabs.map((tab, index) => (
 						<button
-							className={`mr-5 py-1 ${
+							className={`mr-3 md:mr-5 py-1 ${
 								activeTab === tab ? "border-b-4 border-orange-1" : ""
 							} focus:outline-none`}
 							onClick={() => setActiveTab(tab)}
@@ -34,10 +34,7 @@ export default function Settings() {
 					))}
 				</div>
 
-				<div
-					className={`${
-						activeTab === "Publisher Earnings" ? "w-full" : "w-2/5"
-					} mt-6 h-full`}>
+				<div className={`w-full mt-6 h-full`}>
 					{activeTab === "Profile" && <Profile />}
 					{activeTab === "Password" && <Password />}
 					{activeTab === "Subscriptions" && <Subscriptions />}

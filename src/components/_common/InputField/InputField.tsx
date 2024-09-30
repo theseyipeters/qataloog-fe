@@ -26,7 +26,7 @@ const InputField: FC<InputFieldProps> = ({
 	disabled = false,
 }) => {
 	return (
-		<div className={`input-field-wrapper ${className}`}>
+		<div className={`w-full input-field-wrapper ${className}`}>
 			{label && (
 				<label
 					htmlFor={name}

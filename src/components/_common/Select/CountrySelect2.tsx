@@ -12,7 +12,9 @@ export default function CountrySelect2() {
 		{ name: "Nigeria", icon: NG, value: "nigeria" },
 		{ name: "Senegal", icon: SNG, value: "senegal" },
 	];
-	const [selectedCountry, setSelectedCountry] = useState<ICountry | null>(null);
+	const [selectedCountry, setSelectedCountry] = useState<ICountry | null>(
+		countries[0]
+	);
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 
 	const handleCountrySelect = (country: ICountry) => {

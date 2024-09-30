@@ -5,7 +5,7 @@ import RadioSelect from "../../../components/_common/Select/RadioSelect";
 export default function Subscriptions() {
 	return (
 		<div className="w-full">
-			<div className="w-full flex flex-col gap-6">
+			<div className="w-full md:w-3/5 lg:w-2/5 max-w-[600px] flex flex-col gap-6">
 				<CountrySelect />
 
 				<RadioSelect />

@@ -5,7 +5,7 @@ import { RemoveIcon } from "../../../svgs/svgs";
 export default function Profile() {
 	return (
 		<div className="w-full">
-			<div className="w-full flex flex-row gap-6 items-center">
+			<div className="w-full flex flex-col md:flex-row gap-6 items-start md:items-center">
 				<div className="w-fit">
 					<div className="rounded-full bg-orange-1 w-[200px] h-[200px] border-2 border-[#D0D0D4] overflow-hidden">
 						<img
@@ -27,7 +27,7 @@ export default function Profile() {
 					</button>
 				</div>
 			</div>
-			<div className="w-full mt-12 flex flex-col gap-6">
+			<div className="w-full md:w-3/5 lg:w-2/5 max-w-[600px] mt-12 flex flex-col gap-6">
 				<InputField
 					type="text"
 					label="Full Name"

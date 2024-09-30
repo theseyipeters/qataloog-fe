@@ -163,8 +163,8 @@ export default function PublisherEarnings() {
 				)}
 			/>
 
-			<div className="mt-4 w-full flex flex-row gap-3 justify-between items-center">
-				<button className="flex items-center gap-3 py-3 px-8 bg-orange-1 text-white-1 rounded-full">
+			<div className="mt-4 w-full flex flex-col  md:flex-row gap-3 justify-between items-start md:items-center">
+				<button className="flex items-center gap-3 px-4 py-2 lg:py-3 lg:px-8 bg-orange-1 text-white-1 rounded-full">
 					<span className="text-white-3">
 						<PlusIcon />
 					</span>
@@ -189,7 +189,7 @@ export default function PublisherEarnings() {
 					previousLabel={<PreviousButton />}
 					nextLabel={<NextButton />}
 					breakLabel={"..."}
-					pageCount={10}
+					pageCount={4}
 					marginPagesDisplayed={2}
 					pageRangeDisplayed={3}
 					containerClassName={"pagination flex justify-center gap-3"}

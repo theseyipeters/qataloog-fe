@@ -9,7 +9,7 @@ interface TableProps<T> {
 
 const TableComponent: FC<TableProps<any>> = ({ columns, rows, renderRow }) => {
 	return (
-		<div className="overflow-hidden rounded-xl">
+		<div className="overflow-scroll rounded-xl">
 			<table className="w-full table-auto border-separate border-spacing-y-1">
 				<thead className="bg-white-2 rounded-3xl">
 					<tr className="">
