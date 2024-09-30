@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { links } from "./Links";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { Logout } from "../../svgs/sidebarSvgs";
 
 interface MobileSidebarProps {
 	isOpen: boolean;
@@ -44,11 +45,7 @@ export default function MobileSidebar({
 						}
 						onClick={toggleSidebar}>
 						<div className="flex flex-row gap-2 ml-4 items-center">
-							<Icon
-								icon={link.icon}
-								fontSize={30}
-								strokeWidth={1}
-							/>
+							{link?.icon && <link.icon />}
 							<span>{link.name}</span>
 						</div>
 					</NavLink>
@@ -57,10 +54,7 @@ export default function MobileSidebar({
 				{/* Logout Button */}
 				<div className="px-4 py-3 mt-auto text-orange-1">
 					<button className="w-full flex items-center justify-center gap-2 border border-orange-1 py-4 rounded-full">
-						<Icon
-							icon={"tabler:logout-2"}
-							fontSize={20}
-						/>
+						<Logout />
 						<p>Logout</p>
 					</button>
 				</div>

@@ -7,6 +7,7 @@ export default {
 				white: {
 					1: "#FAFAFF",
 					2: "#FEFEFF",
+					3: "#FCFCFF",
 				},
 
 				black: {

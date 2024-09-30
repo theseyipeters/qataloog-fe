@@ -4,6 +4,7 @@ import MainLayout from "../components/Layout/MainLayout/MainLayout";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Books from "../pages/Books/Books";
 import ContentPage from "../pages/Dashboard/ContentPage/ContentPage";
+import Settings from "../pages/Settings/Settings";
 
 export default function AppRoutes() {
 	const isAuthenticated = true;
@@ -17,18 +18,21 @@ export default function AppRoutes() {
 					</ProtectedRoute>
 				}>
 				<Route
+					index
 					path="/"
 					element={<Dashboard />}
 				/>
 				<Route
-					index
 					path="/books/:id"
 					element={<ContentPage />}
 				/>
 				<Route
-					index
 					path="/books"
 					element={<Books />}
+				/>
+				<Route
+					path="/settings"
+					element={<Settings />}
 				/>
 			</Route>
 		</Routes>

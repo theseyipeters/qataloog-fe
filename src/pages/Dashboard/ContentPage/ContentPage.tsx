@@ -9,19 +9,29 @@ import {
 } from "../../../svgs/svgs";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import ReactPaginate from "react-paginate";
+import {
+	ApproveIcon,
+	DeclineIcon,
+	DeleteIcon,
+	ViewIcon,
+} from "../../../svgs/optionsSvgs";
 
 export default function ContentPage() {
 	const book = booksData[0];
-	const itemsPerPage = 8; // Set the number of items per page
+	const itemsPerPage = 8;
 	const [currentPage, setCurrentPage] = useState(0);
 
-	// Calculate the items to display based on the current page
 	const offset = currentPage * itemsPerPage;
 	const currentItems = booksData.slice(offset, offset + itemsPerPage);
 	const pageCount = Math.ceil(booksData.length / itemsPerPage);
 
 	const handlePageClick = ({ selected }: any) => {
 		setCurrentPage(selected);
+	};
+	const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+	const toggleDropdown = () => {
+		setDropdownOpen(!isDropdownOpen);
 	};
 
 	return (
@@ -39,11 +49,38 @@ export default function ContentPage() {
 					<div className="w-full h-auto">
 						<p className="font-semibold text-orange-1 text-lg">Paper</p>
 						<div className="w-full flex flex-col mt-4">
-							<div className="w-full flex items-center justify-between">
+							<div className="w-full flex items-center justify-between relative">
 								<h1 className="text-3xl lg:text-4xl font-semibold">
 									{book.title}
 								</h1>
-								<OptionsIcon />
+								<div
+									className="cursor-pointer"
+									onClick={toggleDropdown}>
+									<OptionsIcon />
+								</div>
+
+								{isDropdownOpen && (
+									<div className="absolute top-10 right-2 mt-2 w-48 bg-white-1 shadow-lg rounded-lg py-2 px-1 z-10">
+										<ul className="text-gray-700 flex flex-col gap-2">
+											<li className="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-100">
+												<ViewIcon />
+												View content
+											</li>
+											<li className="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-100">
+												<ApproveIcon />
+												Approve content
+											</li>
+											<li className="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-100">
+												<DeclineIcon />
+												Decline content
+											</li>
+											<li className="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-100 text-red-500">
+												<DeleteIcon />
+												Mark for delete
+											</li>
+										</ul>
+									</div>
+								)}
 							</div>
 
 							<p className="text-xl mt-3">{book.author}</p>

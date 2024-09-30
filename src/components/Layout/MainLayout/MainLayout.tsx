@@ -12,9 +12,9 @@ export default function MainLayout() {
 		setMobileSidebarOpen(!isMobileSidebarOpen);
 	};
 	return (
-		<div className="relative h-screen w-full">
+		<div className="relative h-screen w-full bg-white-1">
 			<div className="w-full flex flex-row h-full">
-				<div className="w-[300px] border pt-[100px] h-full hidden lg:flex">
+				<div className="w-[300px] pt-[100px] h-full hidden lg:flex">
 					<Sidebar />
 				</div>
 				<div className="pt-[100px] hidden md:block lg:hidden">

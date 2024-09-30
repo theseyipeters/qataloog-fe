@@ -1,21 +1,30 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { links } from "./Links";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Logout } from "../../svgs/sidebarSvgs";
+// import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function Sidebar() {
+	const location = useLocation();
 	return (
-		<nav className="w-[300px] h-full bg-white py-4 flex flex-col">
-			{links.map((link, index) => (
-				<NavLink
-					end
-					key={index}
-					to={link.href}
-					className={({ isActive }) =>
-						isActive
-							? "flex items-center gap-2 py-4 text-orange-1 bg-orange-1/10 rounded-md"
-							: "flex items-center gap-2 py-4 text-gray-700 hover:text-gray-900 rounded-md"
-					}>
-					{({ isActive }) => (
+		<nav className="w-[350px] h-full py-4 flex flex-col">
+			{links.map((link, index) => {
+				const isActive =
+					link.href === "/"
+						? location.pathname === "/"
+						: location.pathname.startsWith(link.href);
+
+				return (
+					<NavLink
+						end
+						key={index}
+						to={link.href}
+						className={`flex items-center gap-2 py-4
+							${
+								isActive
+									? "text-orange-1 bg-orange-1/10 rounded-md"
+									: "text-gray-700 hover:text-gray-900 rounded-md"
+							}
+						`}>
 						<div className="flex items-center relative">
 							{isActive && (
 								<div className="absolute left-0">
@@ -32,27 +41,21 @@ export default function Sidebar() {
 									</svg>
 								</div>
 							)}
-							<div className="flex flex-row gap-2 ml-12 items-center">
-								<Icon
-									icon={link.icon}
-									fontSize={30}
-									strokeWidth={1}
-								/>
+							<div className="flex flex-row gap-4 ml-12 items-center">
+								{link?.icon && <link.icon />}
+
 								<span className={isActive ? "font-medium" : " "}>
-									{link.name}
+									{link?.name}
 								</span>
 							</div>
 						</div>
-					)}
-				</NavLink>
-			))}
+					</NavLink>
+				);
+			})}
 
 			<div className="px-8 py-3 w-full mt-auto text-orange-1">
 				<button className="w-full flex items-center justify-center gap-2 border border-orange-1 py-4 rounded-full px-4">
-					<Icon
-						icon={"tabler:logout-2"}
-						fontSize={20}
-					/>
+					<Logout />
 
 					<p>Logout</p>
 				</button>
