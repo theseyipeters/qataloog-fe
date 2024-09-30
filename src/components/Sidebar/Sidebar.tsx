@@ -6,7 +6,7 @@ import { Logout } from "../../svgs/sidebarSvgs";
 export default function Sidebar() {
 	const location = useLocation();
 	return (
-		<nav className="w-[350px] h-full py-4 flex flex-col">
+		<nav className="w-[350px] overflow-auto h-full py-4 flex flex-col">
 			{links.map((link, index) => {
 				const isActive =
 					link.href === "/"

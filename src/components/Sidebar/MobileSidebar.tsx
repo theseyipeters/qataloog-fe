@@ -14,7 +14,7 @@ export default function MobileSidebar({
 }: MobileSidebarProps) {
 	return (
 		<div
-			className={`w-[300px] fixed inset-0 z-50 bg-white-1 transform ${
+			className={`w-[300px] overflow-auto fixed inset-0 z-50 bg-white-1 transform ${
 				isOpen ? "translate-x-0" : "-translate-x-full"
 			} transition-transform duration-300 lg:hidden`}>
 			{/* Overlay */}
