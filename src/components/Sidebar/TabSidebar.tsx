@@ -4,7 +4,7 @@ import { Logout } from "../../svgs/sidebarSvgs";
 
 export default function TabSidebar() {
 	return (
-		<nav className="w-[250px] h-full bg-white py-4 flex flex-col">
+		<nav className="w-[250px] overflow-auto h-full bg-white py-4 flex flex-col">
 			{links.map((link, index) => (
 				<NavLink
 					key={index}
